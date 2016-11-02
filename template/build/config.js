@@ -16,7 +16,7 @@ var config = {
 if (env === 'dev') {
 	module.exports = Object.assign({
 		format: 'umd',
-		moduleName: '{{ moduleName }}'
+		moduleName: '{{ moduleName }}',
 		dest: path.join(__dirname, '../dist/{{ name }}.js')
 	}, config);
 } else {
