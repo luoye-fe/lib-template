@@ -9,13 +9,28 @@
 		"build": "node build/build.js"
 	},
 	"devDependencies": {
-		"babel-eslint": "^7.1.0",
+		{{#if !typeScript}}
+		"babel-core": "^6.22.1",
 		"babel-plugin-external-helpers": "^6.22.0",
 		"babel-preset-latest": "^6.16.0",
-		"eslint": "^3.9.1",
-		"eslint-config-standard": "^6.2.1",
-		"eslint-plugin-promise": "^3.3.0",
-		"eslint-plugin-standard": "^2.0.1",
+		{{/if}}
+		{{#lint}}
+		{{#if !typeScript}}
+		"babel-eslint": "^7.1.1",
+		{{/if}}
+		"eslint": "^3.14.1",
+		"eslint-friendly-formatter": "^2.0.7",
+		{{#if_eq lintConfig "standard"}}
+    	"eslint-config-standard": "^6.2.1",
+    	"eslint-plugin-promise": "^3.4.0",
+    	"eslint-plugin-standard": "^2.0.1",
+    	{{/if_eq}}
+    	{{#if_eq lintConfig "airbnb"}}
+    	"eslint-config-airbnb-base": "^11.0.1",
+    	"eslint-import-resolver-webpack": "^0.8.1",
+    	"eslint-plugin-import": "^2.2.0",
+    	{{/if_eq}}
+    	{{/lint}}
 		"minimist": "^1.2.0",
 		"rollup": "^0.36.3",
 		"rollup-plugin-babel": "^2.6.1",
