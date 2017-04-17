@@ -28,7 +28,7 @@ function write(dest, code) {
 		fs.writeFile(dest, code, function(err) {
 			if (err) return reject(err);
 			console.log(blue(dest) + ' ' + getSize(code));
-			resolve();
+			resolve(code);
 		});
 	});
 };
@@ -40,8 +40,7 @@ rollup.rollup(config).then(function(bundle) {
 		moduleName: '{{ moduleName }}'
 	}).code;
 }).then(function(code) {
-	write(path.join(__dirname, '../dist/{{ name }}.js'), code);
-	return code;
+	return write(path.join(__dirname, '../dist/{{ name }}.js'), code);
 }).then(function(code) {
 	return uglify.minify(code, {
 		fromString: true,
@@ -51,6 +50,5 @@ rollup.rollup(config).then(function(bundle) {
 		}
 	}).code;
 }).then(function(code) {
-	write(path.join(__dirname, '../dist/{{ name }}.min.js'), code);
-	return code;
+	return write(path.join(__dirname, '../dist/{{ name }}.min.js'), code);
 });
