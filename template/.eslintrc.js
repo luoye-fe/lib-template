@@ -35,18 +35,7 @@ module.exports = {
 	  	// allow paren-less arrow functions
 	  	'arrow-parens': 0,
 	  	// allow async-await
-	  	'generator-star-spacing': 0,
-	  	{{/if_eq}}
-	  	{{#if_eq lintConfig "airbnb"}}
-	  	// don't require .vue extension when importing
-	  	'import/extensions': ['error', 'always', {
-	    	'js': 'never',
-	    	'vue': 'never'
-	  	}],
-	  	// allow optionalDependencies
-	  	'import/no-extraneous-dependencies': ['error', {
-	    	'optionalDependencies': ['test/unit/index.js']
-	  	}],
+	  	'generator-star-spacing': 0
 	  	{{/if_eq}}
 	}
 }
