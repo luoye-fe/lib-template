@@ -9,15 +9,23 @@
 		"build": "node build/build.js"
 	},
 	"devDependencies": {
-		{{#if !typeScript}}
+		{{#typeScript}}
+		"typescript": "^2.2.2",
+		"rollup-plugin-typescript": "^0.8.1",
+		{{/typeScript}}
+		{{#if_eq typeScript false}}
 		"babel-core": "^6.22.1",
 		"babel-plugin-external-helpers": "^6.22.0",
 		"babel-preset-latest": "^6.16.0",
-		{{/if}}
+		"rollup-plugin-babel": "^2.6.1",
+		{{/if_eq}}
 		{{#lint}}
-		{{#if !typeScript}}
+		{{#if_eq typeScript false}}
 		"babel-eslint": "^7.1.1",
-		{{/if}}
+		{{/if_eq}}
+		{{#if_eq typeScript true}}
+		"typescript-eslint-parser": "^2.1.0",
+		{{/if_eq}}
 		"eslint": "^3.14.1",
 		"eslint-friendly-formatter": "^2.0.7",
 		{{#if_eq lintConfig "standard"}}
@@ -33,7 +41,6 @@
     	{{/lint}}
 		"minimist": "^1.2.0",
 		"rollup": "^0.36.3",
-		"rollup-plugin-babel": "^2.6.1",
 		"rollup-plugin-eslint": "^3.0.0",
 		"rollup-watch": "^2.5.0",
 		"uglify-js": "^2.7.3"

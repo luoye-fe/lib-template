@@ -1,15 +1,16 @@
 var path = require('path');
 
-var babel = require('rollup-plugin-babel');
-var eslint = require('rollup-plugin-eslint');
+var complieTools = {{#if isActive}}require('rollup-plugin-babel'){{else}}require('rollup-plugin-typescript'){{/if}};
+{{#lint}}
+var eslint = require('rollup-plugin-eslint');{{/lint}}
 
 var env = require('./env.js');
 
 var config = {
-	entry: path.join(__dirname, '../src/app.js'),
+	entry: path.join(__dirname, '../src/index.{{#if_eq typeScript false}}js{{/if_eq}}{{#if_eq typeScript true}}ts{{/if_eq}}'),
 	plugins: [
-		eslint(),
-		babel()
+		{{#lint}}eslint(),
+		{{/lint}}complieTools()
 	]
 };
 

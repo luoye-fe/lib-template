@@ -1,4 +1,4 @@
-{
+module.exports = {
     "prompts": {
         "name": {
             "type": "string",
@@ -53,7 +53,9 @@
         ".eslint.js": "lint",
         ".eslintignore": "lint",
         "tsconfig.json": "typeScript",
-        ".babelrc": "!typeScript"
+        ".babelrc": "!typeScript",
+        "src/index.js": "!typeScript",
+        "src/index.ts": "typeScript"
     },
     "completeMessage": "To get started:\n\n  cd {{destDirName}}\n  yarn install\n  yarn run dev\n\n"
-}
+};

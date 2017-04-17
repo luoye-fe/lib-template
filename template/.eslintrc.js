@@ -1,11 +1,11 @@
 module.exports = {
 	root: true,
-	{{#if !typeScript}}
-	parser: 'babel-eslint',
-	{{/if}}
-	{{#typeScript}}
-	parse: 'typescript-eslint-parser',
-	{{/typeScript}}
+	{{#if_eq typeScript false}}
+	parserr: 'babel-eslint',
+	{{/if_eq}}
+	{{#if_eq typeScript true}}
+	parser: 'typescript-eslint-parser',
+	{{/if_eq}}
 	parserOptions: {
 		sourceType: 'module'
 	},
