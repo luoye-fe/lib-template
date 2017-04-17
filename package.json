@@ -15,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/luoye-fe/lib-template/issues"
   },
-  "homepage": "https://github.com/luoye-fe/lib-template#readme"
+  "homepage": "https://github.com/luoye-fe/lib-template#readme",
+  "devDependencies": {}
 }
