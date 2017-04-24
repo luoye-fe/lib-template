@@ -47,6 +47,9 @@ rollup.rollup(config).then(function(bundle) {
 		output: {
 			preamble: banner,
 			ascii_only: true
+		},
+		compress: {
+			drop_console: true
 		}
 	}).code;
 }).then(function(code) {
