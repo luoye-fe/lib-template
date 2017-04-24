@@ -1,7 +1,7 @@
 module.exports = {
 	root: true,
 	{{#if_eq typeScript false}}
-	parserr: 'babel-eslint',
+	parser: 'babel-eslint',
 	{{/if_eq}}
 	{{#if_eq typeScript true}}
 	parser: 'typescript-eslint-parser',
@@ -19,18 +19,8 @@ module.exports = {
 	{{#if_eq lintConfig "airbnb"}}
 	extends: 'airbnb-base',
 	{{/if_eq}}
-	{{#if_eq lintConfig "airbnb"}}
-	// check if imports actually resolve
-	'settings': {
-	  	'import/resolver': {
-	    	'webpack': {
-				'config': 'build/webpack.base.conf.js'
-	    	}
-	  	}
-	},
-	{{/if_eq}}
 	// add your custom rules here
-	'rules': {
+	rules: {
 	  	{{#if_eq lintConfig "standard"}}
 	  	// allow paren-less arrow functions
 	  	'arrow-parens': 0,
@@ -38,4 +28,4 @@ module.exports = {
 	  	'generator-star-spacing': 0
 	  	{{/if_eq}}
 	}
-}
+};
