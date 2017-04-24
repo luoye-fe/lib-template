@@ -1,6 +1,6 @@
 var path = require('path');
 
-var complieTools = {{#if isActive}}require('rollup-plugin-babel'){{else}}require('rollup-plugin-typescript'){{/if}};
+var complieTools = {{#if typeScript}}require('rollup-plugin-typescript'){{else}}require('rollup-plugin-babel'){{/if}};
 {{#lint}}
 var eslint = require('rollup-plugin-eslint');{{/lint}}
 
