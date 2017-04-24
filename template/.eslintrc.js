@@ -21,6 +21,12 @@ module.exports = {
 	{{/if_eq}}
 	// add your custom rules here
 	rules: {
+		indent: [2, 'tab'],
+		'no-tabs': 0,
+		'no-console': 0,
+		{{#if_eq lintConfig "airbnb"}}
+		'import/extensions': 0,
+	  	{{/if_eq}}
 	  	{{#if_eq lintConfig "standard"}}
 	  	// allow paren-less arrow functions
 	  	'arrow-parens': 0,
