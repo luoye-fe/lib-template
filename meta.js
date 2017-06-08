@@ -45,7 +45,7 @@ module.exports = {
         }
     },
     "filters": {
-        ".eslint.js": "lint",
+        ".eslintrc.js": "lint",
         ".eslintignore": "lint"
     },
     "completeMessage": "To get started:\n\n  cd {{destDirName}}\n  yarn install\n  yarn run dev\n\n"
