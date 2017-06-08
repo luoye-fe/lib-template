@@ -15,11 +15,6 @@ module.exports = {
             "type": "string",
             "message": "Author"
         },
-        "typeScript": {
-            "type": "confirm",
-            "message": "Use TypeScript complete your library?",
-            "default": false
-        },
         "lint": {
             "type": "confirm",
             "message": "Use ESLint to lint your code?"
@@ -51,11 +46,7 @@ module.exports = {
     },
     "filters": {
         ".eslint.js": "lint",
-        ".eslintignore": "lint",
-        "tsconfig.json": "typeScript",
-        ".babelrc": "!typeScript",
-        "src/index.js": "!typeScript",
-        "src/index.ts": "typeScript"
+        ".eslintignore": "lint"
     },
     "completeMessage": "To get started:\n\n  cd {{destDirName}}\n  yarn install\n  yarn run dev\n\n"
 };

@@ -1,16 +1,29 @@
 var path = require('path');
 
-var complieTools = {{#if typeScript}}require('rollup-plugin-typescript'){{else}}require('rollup-plugin-babel'){{/if}};
+var babel = require('rollup-plugin-babel');
+
+var commonjs = require('rollup-plugin-commonjs');
+var nodeResolve = require('rollup-plugin-node-resolve');
+
 {{#lint}}
 var eslint = require('rollup-plugin-eslint');{{/lint}}
 
 var env = require('./env.js');
 
 var config = {
-	entry: path.join(__dirname, '../src/index.{{#if_eq typeScript false}}js{{/if_eq}}{{#if_eq typeScript true}}ts{{/if_eq}}'),
+	entry: path.join(__dirname, '../src/index.js'),
 	plugins: [
 		{{#lint}}eslint(),
-		{{/lint}}complieTools()
+		{{/lint}}nodeResolve({
+	      	jsnext: true,
+	      	main: true
+	    }),
+	    commonjs({
+	    	include: 'node_modules/**',
+	    }),
+	    babel({
+	    	exclude: 'node_modules/**'
+	    })
 	]
 };
 

@@ -1,11 +1,6 @@
 module.exports = {
 	root: true,
-	{{#if_eq typeScript false}}
 	parser: 'babel-eslint',
-	{{/if_eq}}
-	{{#if_eq typeScript true}}
-	parser: 'typescript-eslint-parser',
-	{{/if_eq}}
 	parserOptions: {
 		sourceType: 'module'
 	},
@@ -24,6 +19,7 @@ module.exports = {
 		indent: [2, 'tab'],
 		'no-tabs': 0,
 		'no-console': 0,
+		'arrow-parens': 0,
 		{{#if_eq lintConfig "airbnb"}}
 		'import/extensions': 0,
 	  	{{/if_eq}}
