@@ -12,6 +12,7 @@ module.exports = {
 	// add your custom rules here
 	rules: {
 		indent: [2, 'tab'],
+		semi: 0,
 		'no-tabs': 0,
 		'no-console': 0,
 		'arrow-parens': 0,
