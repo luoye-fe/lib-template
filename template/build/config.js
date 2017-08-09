@@ -4,17 +4,15 @@ var babel = require('rollup-plugin-babel');
 
 var commonjs = require('rollup-plugin-commonjs');
 var nodeResolve = require('rollup-plugin-node-resolve');
-
-{{#lint}}
-var eslint = require('rollup-plugin-eslint');{{/lint}}
+var eslint = require('rollup-plugin-eslint');
 
 var env = require('./env.js');
 
 var config = {
 	entry: path.join(__dirname, '../src/index.js'),
 	plugins: [
-		{{#lint}}eslint(),
-		{{/lint}}nodeResolve({
+		eslint(),
+		nodeResolve({
 	      	jsnext: true,
 	      	main: true
 	    }),
