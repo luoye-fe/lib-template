@@ -1,7 +1,7 @@
 library template
 -----------------------
 
-A simple js librart template.  
+A simple js library template.  
 
 #### what inlude?
 
@@ -9,7 +9,7 @@ A simple js librart template.
 
 * rollup
 
-* yarn
+* eslint
 
 #### how to use?
 
@@ -21,14 +21,14 @@ A simple js librart template.
 
     `vue init luoye-fe/lib-template ./temp`
 
-* install `node_modules`. (recommended to use `yarn`)
+* install `node_modules`. 
     
-    `yarn install`
+    `npm install`
 
 * development
     
-    `yarn run dev`
+    `npm run dev`
 
 * build
     
-    `yarn build`
+    `npm run build`
