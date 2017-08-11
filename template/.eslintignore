@@ -1,2 +1,4 @@
 build/*.js
 dist/*.js
+**/*.less
+**/*.css
