@@ -17,6 +17,7 @@
 		"eslint": "^3.14.1",
 		"eslint-friendly-formatter": "^2.0.7",
 		{{#less}}
+		"autoprefixer": "^7.1.2",
 		"less": "^2.7.2",
 		"postcss-less-engine": "^0.6.2",
 		"rollup-plugin-postcss": "^0.5.4",

@@ -8,6 +8,7 @@ var eslint = require('rollup-plugin-eslint');
 {{#less}}
 var postcss = require('rollup-plugin-postcss');
 var less = require('postcss-less-engine');
+var autoprefixer = require('autoprefixer');
 {{/less}}
 
 var env = require('./env.js');
