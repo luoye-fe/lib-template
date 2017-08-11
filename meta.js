@@ -9,7 +9,7 @@ module.exports = {
             "type": "string",
             "required": false,
             "message": "Project description",
-            "default": "my library"
+            "default": "Awesome Project."
         },
         "author": {
             "type": "string",
@@ -20,7 +20,15 @@ module.exports = {
             "required": true,
             "message": "The name to use for the module. It must be a legal var.",
             "default": "myLibrary"
+        },
+        "less": {
+            "type": "confirm",
+            "message": "Need css/less?",
+            "default": false
         }
     },
-    "completeMessage": "To get started:\n\n  cd {{destDirName}}\n  yarn install\n  yarn run dev\n\n"
+    "filters": {
+        "src/index.less": "less"
+    },
+    "completeMessage": "To get started:\n\n  cd {{destDirName}}\n  npm install\n  npm run dev\n\n"
 };
