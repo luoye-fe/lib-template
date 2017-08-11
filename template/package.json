@@ -16,9 +16,11 @@
 		"babel-eslint": "^7.2.2",
 		"eslint": "^3.14.1",
 		"eslint-friendly-formatter": "^2.0.7",
-		{{#less}}"less": "^2.7.2",
+		{{#less}}
+		"less": "^2.7.2",
 		"postcss-less-engine": "^0.6.2",
-		"rollup-plugin-postcss": "^0.5.4",{{/less}}
+		"rollup-plugin-postcss": "^0.5.4",
+		{{/less}}
 		"rollup-plugin-eslint": "^3.0.0",
     	"eslint-config-standard": "^6.2.1",
     	"eslint-plugin-promise": "^3.4.0",

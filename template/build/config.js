@@ -5,16 +5,18 @@ var babel = require('rollup-plugin-babel');
 var commonjs = require('rollup-plugin-commonjs');
 var nodeResolve = require('rollup-plugin-node-resolve');
 var eslint = require('rollup-plugin-eslint');
-
-{{#less}}var postcss = require('rollup-plugin-postcss');
-var less = require('postcss-less-engine');{{/less}}
+{{#less}}
+var postcss = require('rollup-plugin-postcss');
+var less = require('postcss-less-engine');
+{{/less}}
 
 var env = require('./env.js');
 
 var config = {
 	entry: path.join(__dirname, '../src/index.js'),
 	plugins: [
-		{{#less}}postcss({
+		{{#less}}
+		postcss({
 			extensions: ['.less'],
 			plugins: [
 				less(),
@@ -23,7 +25,8 @@ var config = {
 	            })
 			],
 			parser: less.parser
-		}),{{/less}}
+		}),
+		{{/less}}
 		eslint(),
 		nodeResolve({
 	      	jsnext: true,
